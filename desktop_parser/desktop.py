@@ -12,6 +12,10 @@ class DesktopFile:
     @classmethod
     def from_dict(cls, data):
         return cls(data=data, load=False)
+    
+    @classmethod
+    def from_file(cls, path):
+        return cls(file_path=path, load=True)
         
     def _load(self, path=None):
         if path is None:
