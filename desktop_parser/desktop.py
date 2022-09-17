@@ -4,19 +4,19 @@ class DesktopFile:
         self.data = data
         if load and file_path is not None:
             self._load()
-        
+
     @classmethod
     def load(cls, path):
         return cls(file_path=path, load=True)
-    
+
     @classmethod
     def from_dict(cls, data):
         return cls(data=data, load=False)
-    
+
     @classmethod
     def from_file(cls, path):
         return cls(file_path=path, load=True)
-        
+
     def _load(self, path=None):
         if path is None:
             path = self.file_path
@@ -27,7 +27,7 @@ class DesktopFile:
                 line = line.strip()
                 if line.startswith('#'):
                     continue
-                if line == '' or line =='\n':
+                if line == '' or line == '\n':
                     issection = False
                     continue
                 if line.startswith('[') and line.endswith(']'):
@@ -45,14 +45,16 @@ class DesktopFile:
                                 self.data[section][key] = {"C": base_value}
                             else:
                                 self.data[key][localekey] = {"C": base_value}
-                        
+
                         if issection:
-                            self.data[section][key][localekey] = line.split("=")[1]
+                            self.data[section][key][localekey] = line.split("=")[
+                                1]
                         else:
                             self.data[key][localekey] = line.split("=")[1]
                     except Exception:
                         if issection:
-                            self.data[section][key] = {localekey: line.split("=")[1]}
+                            self.data[section][key] = {
+                                localekey: line.split("=")[1]}
                         else:
                             self.data[key] = {localekey: line.split("=")[1]}
                     continue
@@ -63,7 +65,6 @@ class DesktopFile:
                     else:
                         self.data[key] = value
                     continue
-
 
     def dump(self, path=None, headings=None, disable_generation_message=False):
         if path is None:
@@ -88,9 +89,10 @@ class DesktopFile:
                             f.write("{}={}\n".format(k, v))
                 else:
                     f.write("{}={}\n".format(key, value))
-                    
+
 
 if __name__ == "__main__":
-    desktop = DesktopFile("com.github.DesktopCreatorTeam.DesktopCreator.desktop.in.in")
+    desktop = DesktopFile(
+        "com.github.DesktopCreatorTeam.DesktopCreator.desktop.in.in")
     desktop.load()
     desktop.dump()
