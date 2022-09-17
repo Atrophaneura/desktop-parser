@@ -1,10 +1,29 @@
 [tool.poetry]
 name = "desktop-parser"
 version = "0.1.0"
-description = ""
+description = "Parse .desktop files"
+license = "GPL-3.0-or-later"
 authors = ["0xMRTT <0xMRTT@tuta.io>"]
+maintainers = ["0xMRTT <0xMRTT@tuta.io>"]
 readme = "README.md"
+homepage = "https://desktopcreatorteam.github.io/"
+documentation = "https://desktopcreatorteam.github.io/"
+keywords = ["desktop", "linux", "freedesktop", "parser", "file", "format", "standard"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities",
+]
+repository = "https://github.com/DesktopCreatorTeam/DesktopCreator"
 packages = [{include = "desktop_parser"}]
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/DesktopCreatorTeam/DesktopCreator/issues"
 
 [tool.poetry.dependencies]
 python = "^3.10"
