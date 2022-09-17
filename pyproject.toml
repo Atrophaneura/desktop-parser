@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "desktop-parser"
+version = "0.1.0"
+description = ""
+authors = ["0xMRTT <0xMRTT@tuta.io>"]
+readme = "README.md"
+packages = [{include = "desktop_parser"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
