@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "desktop-parser"
-version = "0.1.0"
+version = "0.1.1"
 description = "Parse .desktop files"
 license = "GPL-3.0-or-later"
 authors = ["0xMRTT <0xMRTT@tuta.io>"]
